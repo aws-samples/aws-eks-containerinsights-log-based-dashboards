@@ -1,0 +1,41 @@
+extensions:
+  health_check:
+
+  sigv4auth:
+    region: {{ region }}
+
+receivers:
+  awscontainerinsightreceiver:
+
+processors:
+  {% if filter_metric_types -%}
+  filter/exclude:
+    metrics:
+      exclude:
+        match_type: regexp
+        metric_names:
+          {{ filter_metric_types | indent(10) }}
+  {% endif -%}
+
+  batch/metrics:
+    timeout: 60s
+
+exporters:
+  awsemf:
+    namespace: ContainerInsights
+    log_group_name: '/aws/containerinsights/{{ cluster_name }}/performance'
+    log_stream_name: '{NodeName}'
+    region:  {{ region }}
+    resource_to_telemetry_conversion:
+      enabled: true
+    dimension_rollup_option: NoDimensionRollup
+    parse_json_encoded_attr_values: ["Sources", "kubernetes"]
+    metric_declarations:
+      {{ metric_declarations | default("[]", true) | indent(6) }}
+
+service:
+  pipelines:
+    metrics:
+      receivers: [awscontainerinsightreceiver]
+      processors: [{{ "filter/exclude," if filter_metric_types -}} batch/metrics]
+      exporters: [awsemf]

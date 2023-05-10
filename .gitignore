@@ -1,0 +1,26 @@
+*.swp
+package-lock.json
+__pycache__
+.pytest_cache
+.venv
+*.egg-info
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# CDK unit testing
+tests/resources/*.new.json
+
+# Node
+node_modules
+
+# VSCode
+.vscode
+
+# Mac
+.DS_Store
+
+# pycov
+coverage.xml
+.coverage

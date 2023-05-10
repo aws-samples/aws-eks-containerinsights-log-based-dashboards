@@ -1,0 +1,13 @@
+{
+    "name": "eks-containerinsights",
+    "version": "1.0.0",
+    "dependencies": {
+      "aws-cdk": "2.60.0",
+      "cdk-assets": "2.60.0"
+    },
+    "scripts": {
+      "cdk": "cdk",
+      "cdk-assets": "cdk-assets"
+    }
+  }
+  

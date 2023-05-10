@@ -1,0 +1,7 @@
+aws-cdk-lib==2.60.0
+aws-cdk.aws-lambda-python-alpha==2.60.0a0
+cdk-nag==2.22.8
+cloudcomponents.cdk-temp-stack==2.1.0
+constructs>=10.0.0,<11.0.0
+pyyaml==6.0
+cerberus==1.3.4
