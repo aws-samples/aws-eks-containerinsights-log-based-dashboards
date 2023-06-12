@@ -1,6 +1,6 @@
 # Diving into Container Insights cost optimizations for Amazon EKS
 
-This project contains the supporting code for the "Diving into Container Insights cost optimizations for Amazon EKS" blog post.
+This project contains the supporting code for the ["Diving into Container Insights cost optimizations for Amazon EKS"](https://aws.amazon.com/blogs/containers/diving-into-container-insights-cost-optimizations-for-amazon-eks/) blog post.
 
 # Getting started
 
