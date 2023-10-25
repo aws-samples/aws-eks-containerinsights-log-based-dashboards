@@ -96,7 +96,7 @@
                     ]
                 },
                 "Handler": "index.handler",
-                "Runtime": "nodejs14.x"
+                "Runtime": "nodejs16.x"
             },
             "DependsOn": [
                 "TimeToLiveDeleteStackServiceRoleDefaultPolicy08F3148E",
